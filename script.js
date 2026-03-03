@@ -75,7 +75,7 @@ const resetFunction = () => {
 reset.addEventListener('click', resetFunction);
 playAgainButton.addEventListener('click', resetFunction);
 
-
+//Check for Draw
 const chackforDraw = () => {
     let anyboxEmpty = false;
     for(let i=0; i<boxes.length; i++){
@@ -93,4 +93,5 @@ const chackforDraw = () => {
         winmodel.style.display = 'block';
     }
 }
+
 
