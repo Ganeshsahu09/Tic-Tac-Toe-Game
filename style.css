@@ -1,0 +1,171 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: poppins, sans-serif;
+    /* Background Image */
+    background: 
+        linear-gradient(
+            rgba(0,0,0,0.35),
+            rgba(0,0,0,0.35)
+        ),
+        url("https://img.freepik.com/premium-photo/empty-gallery-wall-museum-interior-blank-wood-frame-picture-art-exhibition-photo-display-space_817921-109.jpg?w=740");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+.game-container{
+    /* margin-top: 50px; */
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* gap: 100px; */
+    gap: 60px;
+
+    .title-section{
+        padding: 0 35px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-items: center;
+        gap: 20px;
+        color: aqua;
+
+        h1{
+            font-size: 2.5rem;
+        }
+
+        .game-turn-details-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+
+            span{
+                font-size: 22px;
+                color: aqua;
+
+            }
+            button{
+                /* margin: 0 23px; */
+                margin: 0;
+                padding: 1px 15px;
+                background: #f3e7f9;
+                border-radius: 6px;
+                cursor: pointer;
+                font-size: 15px;
+                height: 36.5px;
+
+            }
+        }
+    }
+
+    .actual-game-section{
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        height: 300px;
+
+        .game-row{
+            display: flex;
+            align-items: center;
+
+            .box{
+                width: 100px;
+                height: 100px;
+                background: #f3e7f9;
+                border: 2px solid #222;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                font-size: 2.5rem;
+                font-weight: 600;
+                transition: all 0.15s ease;
+            }
+            .box:hover{
+                background: #e1d4f0;
+                transform: scale(1.05);
+            }
+
+            .box-left{
+                border-left: 0;
+            }
+            .box-right{
+                border-right: 0;
+            }
+            .box-top{
+                border-top: 0;
+            }
+            .box-bottom{
+                border-bottom: 0;
+            }
+        }
+    }
+
+}
+
+.model{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+
+    .model-content{
+        background-color: white;
+        padding: 2.5rem;
+        border-radius: 10px;
+        text-align: center;
+        animation: modalpopup 0.3s ease-out;
+        min-width: 300px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+
+        .won-player{
+            color: #911d91;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+
+        }
+
+        .play-again-button{
+            padding: 0.8rem 1.5rem;
+            background: #911d91;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: background 0.3s ease;
+
+        }
+
+    }
+
+}
+
+
+@keyframes modalpopup{
+    from{
+        transform: scale(0.6);
+        opacity: 0;
+    }
+    to{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
